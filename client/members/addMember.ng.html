@@ -1,0 +1,18 @@
+<div ng-controller="MembersCtrl">
+
+  <div class="row">
+      <form>
+        <label>First Name: </label>
+        <input type="text" ng-model="newMember.firstName" />
+        <label>Last Name: </label>
+        <input type="text" ng-model="newMember.lastName"  />
+        <label>Email: </label>
+        <input type="text" ng-model="newMember.email"  />
+        <label>public: </label>
+        <input type="checkbox" ng-model="newMember.public">
+        <button ng-click="newMember.owner=$root.currentUser._id; members.push(newMember); newMember=''; ">Add A member!</button>
+    </form>
+  </div>
+
+
+  </div>
