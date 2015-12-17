@@ -2,7 +2,27 @@
 
 
 body{
-    background:#eee;
+    background: url("/img/geometry2.png");
+    color: #797979;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:13px;
+}
+
+.logo{
+    width: 80px;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.clubname{
+        display: inline;
+        padding-left: 20px;
+        color: #5D0891;
+
 }
 .main-box.no-header {
     padding-top: 20px;
@@ -64,4 +84,25 @@ a {
     vertical-align: middle;
     border-top: 1px solid #e7ebee;
     padding: 12px 8px;
+}
+
+/********  Label ******/ 
+.president{
+    background-color: #666; 
+}
+
+.vice-president{
+    background-color: gray; 
+}
+
+.inactive {
+    background-color: #E74C3C; 
+}
+
+.public-relations {
+    background-color: #C53BC5;
+}
+
+.treasurer{
+    background-color: #FFCA5E;
 }

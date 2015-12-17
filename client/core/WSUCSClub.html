@@ -3,14 +3,12 @@
     <base href="/">
 </head>
 
-<body ng-app="CSClub">
+<body>
 
-  <login-buttons></login-buttons>
 
-	<adminHeader></adminHeader>
-	<a href="/">Home</a>
-	<a href="/members">Members</a>
+	<div ng-include src="'client/core/header.ng.html'"></div>
 
+<br><br><br><br><br><br><br>
 <div class="container">
 	<div ui-view=""></div>
 </div>

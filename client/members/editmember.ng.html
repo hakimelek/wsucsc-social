@@ -19,6 +19,17 @@
 			<li>
 			    <label>public: </label>
 				<input type="checkbox" ng-model="member.public">
+				 <select   class="form-control" ng-model="member.status">
+              		  <option value="active">Active</option>
+              		  <option value="inactive">Inactive</option>
+              		  <option value="new">New</option>
+              		  <option value="past-member">Past-Member</option>
+              		  <option value="secretary">Secretary</option>
+              		  <option value="public-relations">Public Relations</option>
+              		  <option value="president">President</option>
+              		  <option value="vice-president">Vice President</option>
+              		  <option value="treasurer">Treasurer</option>
+             	 </select>
 			</li>
 		</ul>
 
