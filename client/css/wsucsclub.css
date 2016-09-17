@@ -117,3 +117,49 @@ a {
 .btn-block {
     display: inline !important;
 }
+
+/* LINE ICONS CONFIGURATION */
+
+.mtbox {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.box1 {
+    padding: 15px;
+    text-align: center;
+    color: #989898;
+}
+
+.box1 span {
+    font-size: 50px;
+
+}
+
+.box1 h3 {
+    text-align: center;
+}
+
+.box0:hover .box1 {
+    border-bottom: 1px solid #ffffff;
+}
+
+.box0 p {
+    text-align: center;
+    font-size: 12px;
+    color: #f2f2f2;
+}
+
+.box0:hover p {
+    color: #ff865c;
+}
+
+.box0 {
+    background: #ffffff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+}
+
+.blocked {
+    background: #ffffff;
+}

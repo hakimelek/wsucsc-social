@@ -13,32 +13,26 @@
 						  <div class="col-md-2 col-sm-2  box0">
 							  {{#linkTo route='members'}}
 							    <div class="box1">
-							    	See all members
-								    <i class="glyphicon" ng-class="glyphicon-user"></i>
+							    	<i class="fa fa-user" aria-hidden="true"></i>
+							    	<h3>Members</h3>
 							    </div>
 							  {{/linkTo}}
 						  </div>
-					  </div><!-- /row mt -->
-
-					  <div class="row mtbox">
 						  <div class="col-md-2 col-sm-2  box0">
 							  {{#linkTo route='email.send'}}
 							    <div class="box1">
-							    	Send Emails
-								    <i class="glyphicon" ng-class="glyphicon-email"></i>
+							    	<i class="fa fa-envelope" aria-hidden="true"></i>
+							    	<h3>Emails</h3>
 							    </div>
 							  {{/linkTo}}
 						  </div>
-					  </div><!-- /row mt -->
-
-					  <div class="row mtbox">
 						  <div class="col-md-2 col-sm-2  box0">
-							  <a href="/members">
+							  {{#linkTo route='admin'}}
 							    <div class="box1">
-							    	Messages
-								    <i class="glyphicon" ng-class="glyphicon-message"></i>
+							    	<i class="fa fa-commenting" aria-hidden="true"></i>
+							    	<h3>Messages</h3>
 							    </div>
-							 </a>
+							  {{/linkTo}}
 						  </div>
 					  </div><!-- /row mt -->
 					</div>
