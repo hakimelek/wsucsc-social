@@ -1,0 +1,15 @@
+<template name="allEmails">
+  {{>header}}
+
+  <div class="container">
+    <div class="page-header">
+      <h1>All emails sent</h1>
+    </div>
+
+    <ul>
+    {{#each emails}}
+      <li>{{subject}}</li>
+    {{/each}}
+    </ul>
+  </div>
+</template>

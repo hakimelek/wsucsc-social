@@ -1,0 +1,108 @@
+<template name="members">
+  {{>header}}
+
+  <div class="container">
+    <div class="page-header">
+        <h1>
+          Members
+          {{#linkTo route='member.add'}}
+            <a type="button" class="btn btn-success btn-block"> Add a Member</a>
+          {{/linkTo}}
+        </h1>
+    </div>
+
+    <!--
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 text-center">
+            {{#linkTo route='member.add'}}
+              <a type="button" class="btn btn-success btn-block"> Add a Member</a>
+            {{/linkTo}}
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group stylish-input-group">
+                <input type="text" class="form-control"  placeholder="Search">
+                        <span class="input-group-addon">
+                            <button type="button" class="glyphicon glyphicon-search">
+                            </button>
+                        </span>
+            </div>
+        </div>
+      </div> -->
+
+    <br>
+    <div class="row">
+          <div class="col-lg-12">
+              <div class="main-box no-header clearfix">
+                  <div class="main-box-body clearfix">
+                      <div class="table-responsive">
+                          <table class="table user-list">
+                              <thead>
+                                  <tr>
+                                  <th><span>User</span></th>
+                                  <th><span>Initiated</span></th>
+                                  <th class="text-center"><span>Status</span></th>
+                                  <th><span>Email</span></th>
+                                  <th>&nbsp;</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  {{#each members}}
+                                  <tr>
+                                      <td>
+                                          <img src="http://bootdey.com/img/Content/user_3.jpg" alt="">
+                                          {{#linkTo route='member.show'}}
+                                            <a class="user-link">
+                                              {{#if $and profile.firstName profile.lastName}}
+                                                {{profile.firstName}} {{profile.lastName}}
+                                              {{else}}
+                                                {{emails.[0].address}}
+                                                {{#linkTo route='member.edit'}}
+                                                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                {{/linkTo}}
+                                              {{/if}}
+                                            </a>
+                                          {{/linkTo}}
+                                          <span class="user-subhead">Admin</span>
+                                      </td>
+                                      <td>
+                                        {{initiated}}
+                                      </td>
+                                      <td class="text-center">
+                                          <span class="label label-success">{{profile.status}}</span>
+                                      </td>
+                                      <td>
+                                          <a href="#">{{emails.[0].address}}</a>
+                                      </td>
+                                      <td style="width: 20%;">
+                                          {{#linkTo route='member.show'}}
+                                            <a class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                          {{/linkTo}}
+                                          {{#if currentUser.profile.admin }}
+                                            {{#linkTo route='member.edit'}}
+                                            <a class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            {{/linkTo}}
+                                          {{/if}}
+                                      </td>
+                                  </tr>
+                                  {{/each}}
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+</template>

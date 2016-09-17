@@ -1,0 +1,60 @@
+<template name="editMember">
+  {{>header}}
+
+  <div class="container">
+    {{#with member}}
+      <div class="page-header">
+        <h1>Edit member</h1>
+        <a href="#" class="table-link danger removeMember">
+          <span class="fa-stack">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </div>
+
+
+
+        <form class="form-horizontal editMember">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="firstName" value="{{profile.firstName}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="lastName" value="{{profile.lastName}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="email" value="{{emails.[0].address}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Status</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="status" value="{{profile.status}}">
+                          <option value="active">Active</option>
+                          <option value="inactive">Inactive</option>
+                          <option value="new">New</option>
+                          <option value="past-member">Past-Member</option>
+                          <option value="secretary">Secretary</option>
+                          <option value="public-relations">Public Relations</option>
+                          <option value="president">President</option>
+                          <option value="vice-president">Vice President</option>
+                          <option value="treasurer">Treasurer</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button class="btn btn-default">{{#linkTo route='members'}}Cancel{{/linkTo}}</button>
+          </div>
+        </form>
+    {{/with}}
+  </div>
+</template>

@@ -15,7 +15,6 @@ body{
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
-
 }
 
 .clubname{
@@ -86,17 +85,17 @@ a {
     padding: 12px 8px;
 }
 
-/********  Label ******/ 
+/********  Label ******/
 .president{
-    background-color: #666; 
+    background-color: #666;
 }
 
 .vice-president{
-    background-color: gray; 
+    background-color: gray;
 }
 
 .inactive {
-    background-color: #E74C3C; 
+    background-color: #E74C3C;
 }
 
 .public-relations {
@@ -105,4 +104,16 @@ a {
 
 .treasurer{
     background-color: #FFCA5E;
+}
+
+.header {
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: white;
+    border-bottom: solid #afafaf 1px;
+}
+
+.btn-block {
+    display: inline !important;
 }

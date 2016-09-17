@@ -1,0 +1,57 @@
+<template name="home">
+  {{>fsheader}}
+   <div id="container-wrapper">
+
+        <div  id="intro">
+            <div id="introtext">
+               <h4>$(description(){</h4>
+                <br>
+                    <h4 class="element">  </h4>
+                <br>
+
+               <h4>} </h4>
+
+                 <a class="arrowdown" href="#committees">
+                           <img src="img/angle-down.png" alt="angle down"/>
+                 </a>
+            </div>
+     </div>
+
+
+    <div id="wrapper-purple" >
+       <div id="committees" >
+
+            <h4 class="center">We are divided into 3 main committees</h4>
+
+
+               <ul>
+                 <li id="firstcommittee">
+                       <a href="#">
+                       <img id="Pcommittee" src="img/PCommittee.png" alt="Projects Committee"/>
+                       <h3>Projects Committee</h3>
+                       <p>This committee is responsable in developing various projects related to Computer Science, these projects aims to help students create and be innovative... </p>
+                       </a>
+                   </li>
+
+                 <li id="secondcommittee">
+                        <a href="#">
+                       <img id="PDcommittee" src="img/PDCommittee.png" alt="Professional Developement Committee"/>
+                       <h3>Professional Development <br> Committee</h3>
+                       <p>This Committee is responsable in  the developing of the student professional skills, establishing networking throught different activities such as talks, conferences and workshops..</p>
+                       </a>
+                   </li>
+
+                    <li id="thirdcommittee">
+                        <a href="#">
+                       <img id="Mcommittee" src="img/MCommittee.png" alt="Membership Committee"/>
+                       <h3>Membership Committee</h3>
+                       <p>This Committee is responsable about recrutements, organizing fun activities in the club to keep good relationship between members, computer science students, professors...</p>
+                       </a>
+                   </li>
+            </ul>
+
+        </div>
+         </div>
+     </div>
+  {{>fsfooter}}
+</template>

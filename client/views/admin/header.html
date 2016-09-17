@@ -1,0 +1,17 @@
+<template name="header">
+	<header class="header black-bg">
+		<!--logo start-->
+		<div class="row">
+					<a href="/admin" class="brand">
+						<img class="logo" src="/img/WSU_CSC_Logo_Color_Web.png" alt="WSU CSC Logo"/>
+						<h4 class="clubname">
+							Computer Science Club | Winona State University
+						</h4>
+					</a>
+					{{#if currentUser}}
+						Logged as {{currentUser.profile.firstName}}
+						<a class="text-right logout">Logout</a>
+					{{/if}}
+		</div>
+	</header>
+</template>
