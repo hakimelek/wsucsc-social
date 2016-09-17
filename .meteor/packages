@@ -20,3 +20,5 @@ angular
 angularui:angular-ui-router
 accounts-password
 dotansimha:accounts-ui-angular
+urigo:angular-utils-pagination
+tmeasday:publish-counts

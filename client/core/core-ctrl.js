@@ -60,7 +60,7 @@
     return {
       restrict: 'E',
       templateUrl: 'client/core/header.ng.html',
-      controllerAs: 'headerCtrl',
+      controllerAs: 'headerCtrl'
     }
   });
 

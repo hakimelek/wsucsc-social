@@ -10,8 +10,8 @@
 						<div class="row">
 							<div class="col-md-5">
 									<a href="/#!/" class="brand">
-										<img class="logo" src="modules/core/img/WSU_CSC_Logo_Color_Web.png" alt="WSU CSC Logo"/>
-										<h4>
+										<img class="logo" src="/img/WSU_CSC_Logo_Color_Web.png" alt="WSU CSC Logo"/>
+										<h4 class="clubname">
 											Computer Science Club |
 											<span class="text-button">Winona State University</span>
 										</h4>
@@ -24,7 +24,7 @@
 									<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
 								</div> -->
 
-									<div class="nav notify-row" id="top_menu" data-ng-show="authentication.user">
+									<div class="nav notify-row" id="top_menu" ng-show="$root.currentUser">
 										<!--  notification start -->
 										<ul class="nav top-menu">
 											<!-- settings start -->
@@ -165,54 +165,9 @@
 										<!--  notification end -->
 									</div>
 
-									<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
-
-										<li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" class="{{item.menuItemClass}}" ng-class="{active: ($uiRoute)}" dropdown="item.menuItemType === 'dropdown'">
-											<a ng-switch-when="dropdown" class="dropdown-toggle">
-												<span data-ng-bind="item.title"></span>
-												<b class="caret"></b>
-											</a>
-
-											<ul ng-switch-when="dropdown" class="dropdown-menu">
-												<li data-ng-repeat="subitem in item.items | orderBy: 'position'" data-ng-if="subitem.shouldRender(authentication.user);" ui-route="{{subitem.uiRoute}}" ng-class="{active: $uiRoute}">
-													<a href="/#!/{{subitem.link}}" data-ng-bind="subitem.title"></a>
-												</li>
-											</ul>
-											<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
-										</li>
-									</ul>
-
-									<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
-										<li ui-route="/signup" ng-class="{active: $uiRoute}">
-											<a href="/#!/signup">Sign Up</a>
-										</li>
-										<li class="divider-vertical"></li>
-										<li ui-route="/signin" ng-class="{active: $uiRoute}">
-											<a href="/#!/signin">Sign In</a>
-										</li>
-									</ul>
-									<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
-										<li class="dropdown">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-												<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
-											</a>
-											<ul class="dropdown-menu">
-												<li>
-													<a href="/#!/settings/profile">Edit Profile</a>
-												</li>
-												<li>
-													<a href="/#!/settings/accounts">Manage Social Accounts</a>
-												</li>
-												<li data-ng-show="authentication.user.provider === 'local'">
-													<a href="/#!/settings/password">Change Password</a>
-												</li>
-												<li class="divider"></li>
-												<li>
-													<a href="/auth/signout">Signout</a>
-												</li>
-											</ul>
-										</li>
-									</ul>
+									<div class="nav navbar-nav">
+											<login-buttons></login-buttons>
+									</div>
 								</nav>
 							</div>
 						</div>
@@ -224,58 +179,6 @@
 
 					</header>
 					<!--header end-->
-					<!-- **********************************************************************************************************************************************************
-				          MAIN SIDEBAR MENU
-				          *********************************************************************************************************************************************************** -->
-					<!--sidebar start-->
-
-
-
-
-					<aside data-ng-show="authentication.user">
-						<div id="sidebar"  class="nav-collapse ">
-							<!-- sidebar menu start-->
-							<ul class="sidebar-menu" id="nav-accordion">
-
-<!-- 								<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
-	<li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="/#!/settings/profile">Edit Profile</a>
-			</li>
-			<li>
-				<a href="/#!/settings/accounts">Manage Social Accounts</a>
-			</li>
-			<li data-ng-show="authentication.user.provider === 'local'">
-				<a href="/#!/settings/password">Change Password</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="/auth/signout">Signout</a>
-			</li>
-		</ul>
-	</li>
-</ul> -->
-
-								<div data-ng-show="authentication.user">
-									<p class="centered"><a href="/#!/settings/profile"><img src="modules/core/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-									<h5 class="centered" data-ng-bind="authentication.user.displayName"></h5>
-								</div>
-								<li class="mt">
-									<a class="active" href="/#!/">
-										<i class="fa fa-dashboard"></i>
-										<span>Dashboard</span>
-									</a>
-								</li>
-
-							</ul>
-							<!-- sidebar menu end-->
-						</div>
-					</aside>
-					<!--sidebar end-->
 
 
 </div>
