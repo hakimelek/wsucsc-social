@@ -7,26 +7,12 @@ OnBeforeActions = {
         return;
       }
       this.next();
-    },
-
-    // adminprivelege: function(pause) {
-    //   if (!Meteor.userId()) {
-    //     if(Meteor.users.find({_id: }))
-    //     Router.go('admin');
-    //     return;
-    //   }
-    //   this.next();
-    // },
+    }
 };
 
 Router.onBeforeAction(OnBeforeActions.loginRequired, {
     except: ['admin','home', 'contact', 'blog', 'constitution']
 });
-
-// Router.onBeforeAction(OnBeforeActions.loginRequired, {
-//     except: ['admin','home', 'contact', 'blog', 'constitution']
-// });
-
 
 Router.configure({
   layoutTemplate: 'MasterLayout',

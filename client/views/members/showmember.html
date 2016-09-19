@@ -13,14 +13,16 @@
           </h1>
           <span><i class="fa fa-envelope" aria-hidden="true"></i> {{emails.[0].address}}</span>
           <span><i class="fa fa-life-ring" aria-hidden="true"></i> {{profile.status}}</span>
-          {{#linkTo route='member.edit'}}
-            <a class="table-link">
-              <span class="fa-stack">
-                  <i class="fa fa-square fa-stack-2x"></i>
-                  <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          {{/linkTo}}
+            {{#if isMeOrAdmin}}
+              {{#linkTo route='member.edit'}}
+                <a class="table-link">
+                  <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              {{/linkTo}}
+            {{/if}}
           {{#linkTo route='member.email'}}
             <a class="table-link">
               <span class="fa-stack">

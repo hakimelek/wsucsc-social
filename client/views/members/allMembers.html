@@ -6,7 +6,7 @@
         <h1>
           Members
           {{#linkTo route='member.add'}}
-            <a type="button" class="btn btn-success btn-block"> Add a Member</a>
+            <a type="button" class="btn btn-success btn-block"> Invite a Member</a>
           {{/linkTo}}
         </h1>
     </div>
@@ -63,34 +63,43 @@
                                               {{/if}}
                                             </a>
                                           {{/linkTo}}
-                                          <span class="user-subhead">Admin</span>
+                                          {{#if isInRole 'admin, officer'}}
+                                            {{#if role}}
+                                              <span class="user-subhead">{{role}}</span>
+                                            {{/if}}
+                                          {{/if}}
                                       </td>
                                       <td>
                                         {{initiated}}
                                       </td>
                                       <td class="text-center">
-                                          <span class="label label-success">{{profile.status}}</span>
+                                          {{#if profile.status }}
+                                            <span class="label label-success">{{profile.status}}</span>
+                                          {{else}}
+                                            <span class="label label-danger">pending</span>
+                                          {{/if}}
                                       </td>
                                       <td>
                                           <a href="#">{{emails.[0].address}}</a>
                                       </td>
                                       <td style="width: 20%;">
-                                          {{#linkTo route='member.show'}}
-                                            <a class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                          {{/linkTo}}
-                                          {{#if currentUser.profile.admin }}
+                                        {{#linkTo route='member.show'}}
+                                          <a class="table-link">
+                                              <span class="fa-stack">
+                                                  <i class="fa fa-square fa-stack-2x"></i>
+                                                  <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                              </span>
+                                          </a>
+                                        {{/linkTo}}
+
+                                          {{#if isMeOrAdmin}}
                                             {{#linkTo route='member.edit'}}
-                                            <a class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
+                                              <a class="table-link">
+                                                  <span class="fa-stack">
+                                                      <i class="fa fa-square fa-stack-2x"></i>
+                                                      <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                  </span>
+                                              </a>
                                             {{/linkTo}}
                                           {{/if}}
                                       </td>
