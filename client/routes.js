@@ -91,3 +91,9 @@ Router.route('/emails', {
   where: 'client'
 });
 
+Router.route('/emails/list', {
+  name: 'emails.emaillist',
+  controller: 'emailsController',
+  action: 'getEmailList',
+  where: 'client'
+});

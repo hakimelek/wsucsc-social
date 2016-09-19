@@ -1,0 +1,13 @@
+<template name="emailList">
+  {{>header}}
+
+  <div class="container">
+    <div class="page-header">
+      <h1>All email Addresses</h1>
+    </div>
+
+    <textarea class="form-control" rows="20">>
+      {{#each users}} {{emails.[0].address}},{{/each}}
+    </textarea>
+  </div>
+</template>

@@ -11,5 +11,9 @@ emailsController = RouteController.extend({
 
   allEmails: function () {
     this.render('allEmails');
+  },
+
+  getEmailList: function () {
+    this.render('emailList');
   }
 });

@@ -89,3 +89,19 @@ Template.allEmails.onCreated(function () {
     self.subscribe('emails');
   });
 });
+
+
+/* EMAIL LIST */
+
+Template.emailList.helpers({
+  'users': function () {
+    return Meteor.users.find();
+  }
+});
+
+Template.emailList.onCreated(function () {
+  var self = this;
+  self.autorun(function () {
+    self.subscribe('users');
+  });
+});
