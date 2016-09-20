@@ -1,5 +1,8 @@
 <template name="MasterLayout">
 
   {{> yield }}
+  {{#if currentUser}}
+    {{>chat}}
+  {{/if}}
 
 </template>

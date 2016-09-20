@@ -13,7 +13,13 @@
         <div class="col-sm-10">
           <select class="selectEmails" name="emails" multiple="multiple">
             {{#each members}}
-                <option value="{{emails.[0].address}}" data-id={{_id}}>{{profile.firstName}} {{profile.lastName}}</option>
+                <option value="{{emails.[0].address}}" data-id={{_id}}>
+                {{#if $and profile.firstName profile.lastName}}
+                                                {{profile.firstName}} {{profile.lastName}}
+                                              {{else}}
+                                                {{emails.[0].address}}
+                                              {{/if}}
+                </option>
             {{/each}}
           </select>
 

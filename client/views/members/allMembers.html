@@ -50,7 +50,7 @@
                                   {{#each members}}
                                   <tr>
                                       <td>
-                                          <img src="http://bootdey.com/img/Content/user_3.jpg" alt="">
+                                          <img src="{{profile.thumbUrl}}" alt="">
                                           {{#linkTo route='member.show'}}
                                             <a class="user-link">
                                               {{#if $and profile.firstName profile.lastName}}

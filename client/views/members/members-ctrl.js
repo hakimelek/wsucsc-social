@@ -72,7 +72,11 @@ Template.editMember.helpers({
   isNotAdmin: function () {
     return !Roles.userIsInRole(this._id,
                             ['admin']);
-  }
+  },
+
+  isMe: function () {
+    return this._id === Meteor.userId();
+  },
 });
 
 Template.editMember.events({
@@ -123,6 +127,18 @@ Template.editMember.events({
       Router.go('members');
     });
 
+  },
+
+  'submit .setPassword': function (event, template) {
+    event.preventDefault();
+
+    // var oldPassword = event.target.oldpassword.value;
+    var newPassword = event.target.newpassword.value;
+
+    Meteor.call('setPassword', newPassword, function (error, response) {
+      if (error) throw error;
+
+    });
   }
 });
 

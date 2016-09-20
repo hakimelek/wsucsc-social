@@ -9,7 +9,13 @@
 						</h4>
 					</a>
 					{{#if currentUser}}
-						Logged as {{currentUser.profile.firstName}}
+						Logged as
+						{{#if currentUser.profile.firstName}}
+              {{currentUser.profile.firstName}}
+            {{else}}
+              {{currentUser.emails.[0].address}}
+            {{/if}}
+
 						<a class="text-right logout">Logout</a>
 					{{/if}}
 		</div>

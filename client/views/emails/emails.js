@@ -46,8 +46,6 @@ Template.sendEmail.events({
       }
     }
 
-    console.log(message);
-
     var email = {
       'html': message,
       'to': emails,

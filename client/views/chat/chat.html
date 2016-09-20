@@ -1,0 +1,100 @@
+<template name="chat">
+
+   <div class="container">
+    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:700px;">
+        <div class="col-xs-12 col-md-12">
+          <div class="panel panel-default">
+                <div class="panel-heading top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <p class="panel-title"><span class="glyphicon glyphicon-comment"></span>
+                        {{#if currentUser}}
+                          Logged as
+                          {{#if currentUser.profile.firstName}}
+                            {{currentUser.profile.firstName}}
+                          {{else}}
+                            {{currentUser.emails.[0].address}}
+                          {{/if}}
+                        {{/if}}</p>
+                    </div>
+                    <div class="col-md-4 col-xs-4" style="text-align: right;">
+                        <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base">
+                    <!-- {{#if moreResults}}
+                        <div id="showMoreResults" style="margin-left: 25px;">
+                            <span class="loading">Loading...</span>
+                        </div>
+                    {{/if}} -->
+                    {{#each messages}}
+                     {{>message}}
+                    {{/each}}
+                </div>
+                <div class="panel-footer">
+                    {{>input}}
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="message">
+  <div class="row msg_container {{#if messageSent}} base_sent {{else}} base_receive{{/if}}">
+      {{#if messageSent}}
+        <div class="col-md-10 col-xs-10">
+            <div class="messages msg_sent">
+                <p>{{text}}</p>
+                <time>
+                {{#with user}}
+                  {{#linkTo route='member.show'}}
+                    {{#if $and profile.firstName }}
+                      {{profile.firstName}}
+                    {{else}}
+                      {{emails.[0].address}}
+                    {{/if}}
+                  {{/linkTo}}
+                {{/with}} • {{timestamp}}
+                 </time>
+            </div>
+        </div>
+        <div class="col-md-2 col-xs-2 avatar">
+          {{#with user}}
+            <img src="{{profile.thumbUrl}}" class=" img-responsive imgavatar ">
+          {{/with}}
+        </div>
+      {{else}}
+        <div class="col-md-2 col-xs-2 avatar">
+          {{#with user}}
+            <img src="{{profile.thumbUrl}}" class=" img-responsive imgavatar ">
+          {{/with}}
+        </div>
+        <div class="col-md-10 col-xs-10">
+          <div class="messages msg_sent">
+              <p>{{text}}</p>
+              <time>
+              {{#with user}}
+                {{#linkTo route='member.show'}}
+                  {{#if $and profile.firstName }}
+                    {{profile.firstName}}
+                  {{else}}
+                    {{emails.[0].address}}
+                  {{/if}}
+                {{/linkTo}}
+              {{/with}} • {{timestamp}}
+               </time>
+          </div>
+        </div>
+      {{/if}}
+
+  </div>
+</template>
+
+<template name="input">
+  <div class="input-group">
+      <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-sm send" id="btn-chat"><i class="glyphicon-plus glyphicon"></i></button>
+      </span>
+  </div>
+</template>
