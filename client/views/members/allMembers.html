@@ -50,8 +50,11 @@
                                   {{#each members}}
                                   <tr>
                                       <td>
-
-                                          <img src="{{profile.thumbUrl}}" alt="">
+                                          {{#if profile.thumbUrl}}
+                                            <img src="{{profile.thumbUrl}}" alt="">
+                                          {{else}}
+                                            <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+                                          {{/if}}
                                           {{#linkTo route='member.show'}}
                                             <a class="user-link">
                                               {{#if status.online}}
