@@ -117,9 +117,12 @@ Template.editMember.events({
 
     var controller = Router.current();
 
-    Meteor.call('removeMember', controller.params._id, function (error, response) {
-      if (error) throw error;
-      Router.go('members');
+    swal({   title: "Are you sure?",   text: "You will not be able to recover this member!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, remove it!",   closeOnConfirm: false }, function(){
+      Meteor.call('removeMember', controller.params._id, function (error, response) {
+        if (error) throw error;
+        Router.go('members');
+        swal("Remove!", "The member has been removed.", "success");
+      });
     });
   },
 

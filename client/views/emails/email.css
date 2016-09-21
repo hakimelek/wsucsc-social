@@ -6,3 +6,24 @@
   margin-left: 16px;
   padding: 10px;
 }
+
+.all {
+    background: rgba(100,160,100,0.6);
+    border-top: 10px #ddd solid;
+}
+
+.board {
+    background: rgba(220,280,40,0.6);
+}
+
+.inactiveMembers {
+    background: rgba(125,40,40,0.4);
+}
+
+.pastMembers {
+    background: rgba(200,200,200,0.3);
+}
+
+.everySingleMember {
+    background: rgba(200,200,200,0.4);
+}

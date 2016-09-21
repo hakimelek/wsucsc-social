@@ -52,10 +52,15 @@ Template.sendEmail.events({
       'subject': subject,
     }
 
-    Meteor.call('sendEmais', email, function (error, response) {
-      if (error) throw error;
-      Router.go('emails');
+    swal({   title: "Are you sure?",   text: "Once confirmed, an email will be sent to the selected members!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, send it!",   closeOnConfirm: false }, function(){
+      Meteor.call('sendEmais', email, function (error, response) {
+        if (error) throw error;
+        Router.go('emails');
+        swal("Sent!", "Your email has been sent!", "success");
+      });
     });
+
+
   }
 });
 
@@ -69,7 +74,13 @@ Template.sendEmail.onCreated(function () {
 
 Template.sendEmail.onRendered(function () {
   $(".selectEmails").select2({
-    width: '100%'
+    width: '100%',
+    templateResult: function (data, container) {
+      if (data.element) {
+        $(container).addClass($(data.element).attr("class"));
+      }
+      return data.text;
+    }
   });
 });
 
