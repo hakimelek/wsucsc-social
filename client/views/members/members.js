@@ -46,11 +46,14 @@ Template.showMember.helpers({
   isMe: function () {
     return this._id === Meteor.userId();
   },
-
   isMeOrAdmin: function () {
     return this._id === Meteor.userId() || Roles.userIsInRole(Meteor.user(),
                             ['admin', 'officer']);
   },
+  hasProjects: function () {
+    var controller = Router.current();
+    return Projects.find({ownerId: controller.params._id}).count() > 0;
+  }
 });
 
 Template.showMember.onCreated(function () {
@@ -58,6 +61,7 @@ Template.showMember.onCreated(function () {
   var controller = Router.current();
   self.autorun(function () {
     self.subscribe('user', controller.params._id);
+    self.subscribe('userProjects', controller.params._id);
   });
 });
 

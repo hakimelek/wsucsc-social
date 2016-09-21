@@ -1,0 +1,48 @@
+.projectbox {
+  border-radius: 5px;
+  border: 1px solid #5D0891;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+}
+
+.projectbox h4 {
+  margin-top: 0px;
+}
+
+.projectbox p {
+  color: #797979;
+}
+
+.projectbox .join {
+  border: 1px solid #5D0891;
+  color: #5D0891;
+}
+
+.projectbox .leaveProject {
+  background-color: #5D0891;
+  color: #ffffff;
+}
+
+.projectbox .leaveProject:hover {
+  background-color: #2a1a4a;
+  color: #ffffff;
+}
+
+.projectbox .leaveProject .badge {
+  background-color: #ffffff;
+  color: #5D0891;
+}
+
+.projectbox .startProject {
+  background-color: #5D0891;
+  margin-left: 50px;
+}
+
+.projectbox .startProject:hover {
+  background-color: #2a1a4a;
+}
+
+a .projectbox p:hover {
+  text-decoration: none;
+}

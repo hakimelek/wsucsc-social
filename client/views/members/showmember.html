@@ -33,13 +33,29 @@
           {{/linkTo}}
       </div>
 
-    <div class="jumbotron">
-      {{#if content}}
-
+      {{#if hasProjects}}
+        {{>userProjects}}
       {{else}}
-        <p>Nothing about this guy yet 😱!</p>
+        {{#if isMe}}
+          <div class="row">
+            <div class="col-md-3 projectbox center-block">
+              {{#linkTo route='project.create'}}
+                <div class="col-md-6 ">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary center-block startProject">
+                        Start a Project!
+                    </button>
+                </div>
+              {{/linkTo}}
+            </div>
+          </div>
+        {{else}}
+        <div class="jumbotron">
+          <p>Nothing about this guy yet 😱!</p>
+        </div>
+        {{/if}}
       {{/if}}
-    </div>
+
+
     {{/with}}
 
   </div>

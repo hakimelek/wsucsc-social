@@ -98,3 +98,25 @@ Router.route('/emails/list', {
   where: 'client'
 });
 
+Router.route('/projects/create', {
+  name: 'project.create',
+  controller: 'projectsController',
+  action: 'createProject',
+  where: 'client'
+});
+
+Router.route('/projects/:_id', {
+  name: 'project.show',
+  controller: 'projectsController',
+  action: 'showProject',
+  where: 'client'
+});
+
+Router.route('/projects/:_id/edit', {
+  name: 'project.edit',
+  controller: 'projectsController',
+  action: 'editProject',
+  where: 'client'
+});
+
+

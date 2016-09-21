@@ -72,7 +72,9 @@
         <div class="col-md-10 col-xs-10">
           <div class="messages msg_sent">
               <p>{{text}}</p>
-              <time>
+              {{#if status.online}}
+                <span class="glyphicon glyphicon-one-fine-dot green"></span>
+              {{/if}}
               {{#with user}}
                 {{#linkTo route='member.show'}}
                   {{#if $and profile.firstName }}
@@ -81,8 +83,8 @@
                     {{emails.[0].address}}
                   {{/if}}
                 {{/linkTo}}
-              {{/with}} • {{timestamp}}
-               </time>
+              {{/with}} •
+              <time>{{timestamp}}</time>
           </div>
         </div>
       {{/if}}

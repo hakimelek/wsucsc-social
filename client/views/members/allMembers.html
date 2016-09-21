@@ -50,9 +50,13 @@
                                   {{#each members}}
                                   <tr>
                                       <td>
+
                                           <img src="{{profile.thumbUrl}}" alt="">
                                           {{#linkTo route='member.show'}}
                                             <a class="user-link">
+                                              {{#if status.online}}
+                                                <span class="glyphicon glyphicon-one-fine-dot green"></span>
+                                              {{/if}}
                                               {{#if $and profile.firstName profile.lastName}}
                                                 {{profile.firstName}} {{profile.lastName}}
                                               {{else}}

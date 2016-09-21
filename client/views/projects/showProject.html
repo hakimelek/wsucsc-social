@@ -1,0 +1,18 @@
+<template name="showProject">
+  {{>header}}
+
+  <div class="container">
+    {{#with project}}
+      <div class="page-header">
+        <h1>{{name}}</h1>
+      </div>
+
+      <div class="jumbotron">
+        {{description}}
+        <h3>Collaborators</h3>
+
+      </div>
+    {{/with}}
+  </div>
+</template>
+
