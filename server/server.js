@@ -4,7 +4,7 @@ Accounts.onCreateUser(function (options, user) {
   user.roles = ['member'];
 
   var status = user.profile.status;
-  if (status == "secretary" || status == "president" || status == "vice-president" || status == "treasurer") {
+  if (status === 'secretary' || status === 'president' || status === 'vice-president' || status === 'treasurer') {
     user.roles = ['officer', 'member'];
   }
 

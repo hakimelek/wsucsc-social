@@ -12,6 +12,11 @@
         <label for="email" class="col-sm-2 control-label">Recepients</label>
         <div class="col-sm-10">
           <select class="selectEmails" name="emails" multiple="multiple">
+            <option class="all" value="all">All Active members</option>
+            <option class="board" value="board">Board Only</option>
+            <option class="inactiveMembers" value="inactive">Inactive Only</option>
+            <option class="pastMembers" value="pastMembers">Past Members</option>
+            <option class="everySingleMember" value="everySingleMember">Every Single Member</option>
             {{#each members}}
                 <option value="{{emails.[0].address}}" data-id={{_id}}>
                 {{#if $and profile.firstName profile.lastName}}
@@ -21,11 +26,6 @@
                                               {{/if}}
                 </option>
             {{/each}}
-            <option class="all" value="all">All Active members</option>
-            <option class="board" value="board">Board Only</option>
-            <option class="inactiveMembers" value="inactive">Inactive Only</option>
-            <option class="pastMembers" value="pastMembers">Past Members</option>
-            <option class="everySingleMember" value="everySingleMember">Every Single Member</option>
           </select>
 
         </div>

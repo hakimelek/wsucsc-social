@@ -147,6 +147,17 @@ Template.editMember.events({
     Meteor.call('setPassword', newPassword, controller.params._id, function (error, response) {
       if (error) throw error;
     });
+  },
+
+  'submit .changePassword': function (event, template) {
+    event.preventDefault();
+
+    var oldPassword = event.target.oldpassword.value;
+    var newPassword = event.target.newpassword.value;
+
+    Meteor.call('chngPassword', newPassword, oldPassword, function (error, response) {
+      if (error) throw error;
+    });
   }
 });
 

@@ -71,7 +71,7 @@
         </form>
 
         <hr><br>
-          {{#if isMeOrAdmin}}
+          {{#if isInRole 'admin'}}
             <form class="form-horizontal setPassword">
               <!-- <div class="form-group">
                 <label class="col-sm-2 control-label">Old Password</label>
@@ -79,6 +79,25 @@
                   <input type="password" class="form-control" name="oldpassword">
                 </div>
               </div> -->
+              <div class="form-group">
+                <label class="col-sm-2 control-label">New Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" name="newpassword">
+                </div>
+              </div>
+              <div class="col-sm-offset-11 col-sm-10">
+                <button type="submit" class="btn btn-default">Change</button>
+              </div>
+            </form>
+          {{/if}}
+          {{#if isMe}}
+            <form class="form-horizontal changePassword">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Old Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" name="oldpassword">
+                </div>
+              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">New Password</label>
                 <div class="col-sm-10">

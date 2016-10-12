@@ -4,13 +4,12 @@ Template.createProject.helpers({
 
 });
 
-
 Template.createProject.onCreated(function () {
 
 });
 
 Template.createProject.events({
- 'submit .createProject': function(event, template) {
+  'submit .createProject': function (event, template) {
     event.preventDefault();
 
     var name = event.target.name.value;
@@ -28,7 +27,6 @@ Template.createProject.events({
     return false;
   }
 });
-
 
 /* List user Projects */
 
@@ -55,8 +53,6 @@ Template.projectBox.helpers({
   }
 });
 
-
-
 Template.userProjects.onCreated(function () {
 
 });
@@ -79,13 +75,12 @@ Template.userProjects.events({
   }
 });
 
-
 /* Show user projects */
 
 Template.showProject.helpers({
   'project': function () {
     var controller = Router.current();
-    return Projects.findOne({_id:  controller.params._id});
+    return Projects.findOne({_id: controller.params._id});
   }
 });
 
@@ -102,18 +97,17 @@ Template.showProject.onCreated(function () {
   });
 });
 
-
 /* Edit a project */
 
 Template.editProject.helpers({
   'project': function () {
     var controller = Router.current();
-    return Projects.findOne({_id:  controller.params._id});
+    return Projects.findOne({_id: controller.params._id});
   }
 });
 
 Template.editProject.events({
-  'submit .editProject': function(event, template) {
+  'submit .editProject': function (event, template) {
     event.preventDefault();
 
     var name = event.target.name.value;
@@ -139,6 +133,3 @@ Template.editProject.onCreated(function () {
     self.subscribe('project', controller.params._id);
   });
 });
-
-
-

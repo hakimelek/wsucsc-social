@@ -1,3 +1,3 @@
-Meteor.publish("emails", function () {
+Meteor.publish('emails', function () {
   return Emails.find();
 });

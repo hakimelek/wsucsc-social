@@ -18,20 +18,15 @@ Template.sendEmail.helpers({
       tabSpaces: false,
 
       // FE save.before event handler function:
-      "_onsave.before": function (e, editor) {
-        var newHTML = editor.html.get(true /* keep_markers */);
-        // Do something to update the edited value
-        // if (!_.isEqual(newHTML, self.note.body)) {
-        //   Meteor.call('saveNote', { body: newHTML })
-        // }
+      '_onsave.before': function (e, editor) {
         return false; // Stop Froala Editor from POSTing to the Save URL
-      },
+      }
     }
-  },
+  }
 });
 
 Template.sendEmail.events({
-  'submit .sendEmail': function(event, template) {
+  'submit .sendEmail': function (event, template) {
     event.preventDefault();
 
     var message = template.$('div.froala-reactive-meteorized').froalaEditor('html.get', true);
@@ -49,35 +44,32 @@ Template.sendEmail.events({
     var email = {
       'html': message,
       'to': emails,
-      'subject': subject,
+      'subject': subject
     }
 
-    swal({   title: "Are you sure?",   text: "Once confirmed, an email will be sent to the selected members!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, send it!",   closeOnConfirm: false }, function(){
+    swal({ title: 'Are you sure?', text: 'Once confirmed, an email will be sent to the selected members!', type: 'warning', showCancelButton: true, confirmButtonColor: '#DD6B55', confirmButtonText: 'Yes, send it!', closeOnConfirm: false }, function () {
       Meteor.call('sendEmais', email, function (error, response) {
         if (error) throw error;
         Router.go('emails');
-        swal("Sent!", "Your email has been sent!", "success");
+        swal('Sent!', 'Your email has been sent!', 'success');
       });
     });
-
-
   }
 });
 
 Template.sendEmail.onCreated(function () {
   var self = this;
-  var controller = Router.current();
   self.autorun(function () {
     self.subscribe('users');
   });
 });
 
 Template.sendEmail.onRendered(function () {
-  $(".selectEmails").select2({
+  $('.selectEmails').select2({
     width: '100%',
     templateResult: function (data, container) {
       if (data.element) {
-        $(container).addClass($(data.element).attr("class"));
+        $(container).addClass($(data.element).attr('class'));
       }
       return data.text;
     }
@@ -98,7 +90,6 @@ Template.allEmails.onCreated(function () {
     self.subscribe('emails');
   });
 });
-
 
 /* EMAIL LIST */
 

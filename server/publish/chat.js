@@ -1,5 +1,5 @@
-Meteor.publish("messages", function (limit) {
+Meteor.publish('messages', function (limit) {
   if (this.userId) {
-    return Messages.find({}, { sort: { createdAt: 1}});
+    return Messages.find({}, {sort: {createdAt: 1}});
   }
 });

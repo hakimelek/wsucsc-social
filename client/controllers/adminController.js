@@ -7,5 +7,13 @@ adminController = RouteController.extend({
 
   detail: function () {
     this.render('admin', { /* data: {} */});
+  },
+
+  forgotpwd: function () {
+    this.render('forgotPassword')
+  },
+
+  resetpwd: function () {
+    this.render('resetPassword')
   }
 });

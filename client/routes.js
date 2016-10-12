@@ -1,17 +1,17 @@
 var OnBeforeActions;
 
 OnBeforeActions = {
-    loginRequired: function(pause) {
-      if (!Meteor.userId()) {
-        Router.go('admin');
-        return;
-      }
-      this.next();
+  loginRequired: function (pause) {
+    if (!Meteor.userId()) {
+      Router.go('admin');
+      return;
     }
+    this.next();
+  }
 };
 
 Router.onBeforeAction(OnBeforeActions.loginRequired, {
-    except: ['admin','home', 'contact', 'blog', 'constitution']
+  except: ['admin', 'home', 'contact', 'blog', 'constitution']
 });
 
 Router.configure({
@@ -46,7 +46,21 @@ Router.route('/constitution', function () {
 Router.route('/admin', {
   name: 'admin',
   controller: 'adminController',
+  where: 'client'
+});
+
+Router.route('/account/resetpwd', {
+  name: 'resetpwd',
+  controller: 'adminController',
   where: 'client',
+  action: 'resetpwd'
+});
+
+Router.route('/account/forgotpwd', {
+  name: 'forgotpwd',
+  controller: 'adminController',
+  where: 'client',
+  action: 'forgotpwd'
 });
 
 Router.route('/members', {
