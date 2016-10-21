@@ -11,7 +11,7 @@ OnBeforeActions = {
 };
 
 Router.onBeforeAction(OnBeforeActions.loginRequired, {
-  except: ['admin', 'home', 'contact', 'blog', 'constitution']
+  except: ['admin', 'home', 'contact', 'blog', 'constitution', 'hackathon']
 });
 
 Router.configure({
@@ -20,6 +20,12 @@ Router.configure({
 });
 
 Router.route('/', function () {
+  this.render('hackathon');
+}, {
+  name: 'hackathon'
+});
+
+Router.route('/home', function () {
   this.render('home');
 }, {
   name: 'home'
@@ -132,5 +138,3 @@ Router.route('/projects/:_id/edit', {
   action: 'editProject',
   where: 'client'
 });
-
-

@@ -34,3 +34,7 @@ Template.contact.events({
     return false;
   }
 });
+
+Template.hackathon.onCreated(function () {
+  new WOW().init();
+});

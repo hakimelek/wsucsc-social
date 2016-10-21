@@ -6,7 +6,7 @@
         <h1>
           Members
           {{#linkTo route='member.add'}}
-            <a type="button" class="btn btn-success btn-block"> Invite a Member</a>
+            <a type="button" class="btn btn-success"> Invite a Member</a>
           {{/linkTo}}
         </h1>
     </div>
@@ -51,9 +51,9 @@
                                   <tr>
                                       <td>
                                           {{#if profile.thumbUrl}}
-                                            <img src="{{profile.thumbUrl}}" alt="">
+                                            <img class="img-rounded" src="{{profile.thumbUrl}}" alt="">
                                           {{else}}
-                                            <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+                                            <img class="img-rounded" src="http://bootdey.com/img/Content/user_1.jpg" alt="">
                                           {{/if}}
                                           {{#linkTo route='member.show'}}
                                             <a class="user-link">

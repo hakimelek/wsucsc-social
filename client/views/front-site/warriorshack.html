@@ -1,0 +1,139 @@
+<template name="hackathon">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>{{#linkTo route='home'}}CS Club website{{/linkTo}}</li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    <header class="hackathon">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <a class="mhl" href="https://localhackday.mlh.io/"><img src="img/mhl.svg" alt="Logo"></a>
+          </div>
+          <div class="col-xs-6 signin text-right navbar-nav">
+            &nbsp; &nbsp;<a href="/home">Back to CS Club</a>
+          </div>
+        </div>
+
+        <div class="row header-info">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            <img class="wazoo-hack wow swing img-responsive center-block" src="img/wazoo_hack.png">
+            <h1 class="WHheading wow fadeIn">
+              The First Winona State <br>Hackathon
+            </h1>
+            <br />
+            <p class="lead wow fadeIn" data-wow-delay="0.5s">
+              Sat December 3rd
+              <br>
+              9am - 9pm
+            </p>
+            <br />
+            <div class="wow fadeInUp" data-wow-delay="1s">
+              <a href="https://localhackday.mlh.io/register/?id=winona&city_name=Winona%2C%20Minnesota" class="btn btn-secondary btn-lg scroll">Register now!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <br><br>
+    <div class="mouse-icon hidden-xs">
+        <div class="scroll"></div>
+      </div>
+
+    <br>
+
+    <section id="main-info" class="pad-xl">
+      <div class="container">
+        <h1>FAQ</h1>
+        <br>
+        <div class="row">
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+            <div class="questionbox">
+              <hr class="line purple">
+              <h3>What is Warrior Hacks?</h3>
+              <p>Warrior Hacks is a 12 hour hackathon scheduled in December 3rd, 2016 at WSU Kryzsko Commons that plans to bring together students in teams of 1-4 from across the campus to work on anything they set their mind to. There are workshops, mentors, food, swag, and buckets of coffee to guide you along the way.You bring your ideas, and we give you everything you need to make them come to life.</p>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
+            <div class="questionbox">
+              <hr  class="line purple">
+              <h3>What is a Hackathon?</h3>
+              <p>A hackathon is a magical event where students spend hours and hours building an idea into reality. It's about learning new things and coming up with creative solutions with technology.</p>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
+            <div class="questionbox">
+              <hr  class="line purple">
+              <h3>What is a Local Hack Day?</h3>
+              <p>Local Hack Day (or LHD for short) is a 12 hour mini-hackathon that takes place on school campuses around the world.  It’s designed to be a gentle introduction to hackathons that celebrates the local community. On the same date, different LHD will be held accross the world. <a href="https://localhackday.mlh.io/">Wanna know more?</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+            <div class="questionbox">
+              <hr class="line purple">
+              <h3>Who can attend?</h3>
+              <p>Any university student (graduate or undergraduate) is welcome to participate! Anyone and everyone is welcome to come and see what participants are working on, though, so feel free to swing by.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
+            <div class="questionbox">
+              <hr  class="line purple">
+              <h3>How do I  and when does registration open?</h3>
+              <p>You can <a href="https://localhackday.mlh.io/register/?id=winona&city_name=Winona%2C%20Minnesota">register</a> by November 15th.</p>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
+            <div class="questionbox">
+              <hr class="line purple">
+              <h3>What should I bring?</h3>
+              <p>Yourself, your valid university ID, a laptop, chargers, or anything else you might need within the 24 hours. Firearms, weapons, alcohol, illegal drugs, and power tools are not allowed. Smiles and awesomeness are welcome.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+            <div class="questionbox">
+              <hr class="line purple">
+              <h3>Is it okay if I don't have any experience?</h3>
+              <p>
+                That's completely fine! You'll have plenty of opportunity to pick the brains of talented students around you. Furthermore, 12 hours is plenty of time to learn something new!
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
+            <div class="questionbox">
+              <hr  class="line purple">
+              <h3>What can I win?</h3>
+              <p>A panel of judges will decide on the winning hacks based on criteria of creativity, usefulness, technical difficulty, and form. The top prizes are TBD.</p>
+            </div>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
+            <div class="questionbox">
+              <hr  class="line purple">
+              <h3>Another question?</h3>
+              <p>Shoot the CS Club a {{#linkTo route='contact'}} message {{/linkTo}} and we'll get back to you as soon as we can!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+</template>
