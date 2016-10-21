@@ -15,5 +15,9 @@ projectsController = RouteController.extend({
 
   editProject: function () {
     this.render('editProject');
+  },
+
+  allProjects: function () {
+    this.render('allProjects');
   }
 });

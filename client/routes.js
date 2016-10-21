@@ -118,6 +118,13 @@ Router.route('/emails/list', {
   where: 'client'
 });
 
+Router.route('/projects/', {
+  name: 'projects',
+  controller: 'projectsController',
+  action: 'allProjects',
+  where: 'client'
+});
+
 Router.route('/projects/create', {
   name: 'project.create',
   controller: 'projectsController',

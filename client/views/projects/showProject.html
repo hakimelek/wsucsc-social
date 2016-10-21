@@ -10,7 +10,21 @@
       <div class="jumbotron">
         {{description}}
         <h3>Collaborators</h3>
-
+        <ul>
+          {{#each collaborators}}
+            <li>
+              {{#with collaborator}}
+                {{#linkTo route='member.show'}}
+                  {{#if $and profile.firstName profile.lastName}}
+                    {{profile.firstName}} {{profile.lastName}}
+                  {{else}}
+                    {{emails.[0].address}}
+                  {{/if}}
+                {{/linkTo}}
+              {{/with}}
+            </li>
+          {{/each}}
+        </ul>
       </div>
     {{/with}}
   </div>

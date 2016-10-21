@@ -13,16 +13,25 @@
 						  <div class="col-md-2 col-sm-2  box0">
 							  {{#linkTo route='members'}}
 							    <div class="box1">
-							    	<i class="fa fa-user" aria-hidden="true"></i>
+							    	👫
 							    	<h3>Members</h3>
 							    </div>
 							  {{/linkTo}}
 						  </div>
+						  <div class="col-md-2 col-sm-2  box0">
+							  {{#linkTo route='projects'}}
+							    <div class="box1">
+							    	⚙
+							    	<h3>Projects</h3>
+							    </div>
+							  {{/linkTo}}
+						  </div>
+
 						  {{#if isInRole 'admin, officer'}}
 							  <div class="col-md-2 col-sm-2  box0">
 								  {{#linkTo route='email.send'}}
 								    <div class="box1">
-								    	<i class="fa fa-envelope" aria-hidden="true"></i>
+								    	📨
 								    	<h3>Emails</h3>
 								    </div>
 								  {{/linkTo}}

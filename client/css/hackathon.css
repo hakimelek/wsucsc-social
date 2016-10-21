@@ -10,21 +10,36 @@
   -o-background-size: cover;
 }
 
-.wazoo-hack {
-  min-height: 100%;
-}
-
 .WHheading {
   color: #fff;
   font-size: 3.4em;
-  font-family: 'Lato';
+  font-family: 'Lato', Helvetica, Verdana;
+}
+
+@media all and (max-width: 768px) {
+  .WHheading {
+    font-size: 1.4em;
+    font-family: 'Lato', Helvetica, Verdana;
+  }
+
+  .lead {
+    font-size: 9px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .topfixed {
+    display: none;
+  }
 }
 
 .lead {
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: 50;
-  font-family: 'Lato';
+  font-family: 'Lato', Helvetica, Verdana;
 }
 
 .header-info {

@@ -20,7 +20,9 @@
 
 <template name="projectBox">
   <div class="col-md-3 projectbox">
-    <h4>{{name}}</h4>
+    {{#linkTo route='project.show'}}
+      <h4>{{name}}</h4>
+    {{/linkTo}}
     {{#if isMe}}
       {{#linkTo route='project.edit'}}
         edit

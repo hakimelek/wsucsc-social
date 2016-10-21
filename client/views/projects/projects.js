@@ -54,10 +54,14 @@ Template.projectBox.helpers({
 });
 
 Template.userProjects.onCreated(function () {
-
+  var self = this;
+  var controller = Router.current();
+  self.autorun(function () {
+    self.subscribe('userProjects', controller.params._id);
+  });
 });
 
-Template.userProjects.events({
+Template.projectBox.events({
   'click .joinProject': function () {
     Meteor.call('joinProject', this._id,
       function (error, response) {
@@ -81,6 +85,10 @@ Template.showProject.helpers({
   'project': function () {
     var controller = Router.current();
     return Projects.findOne({_id: controller.params._id});
+  },
+
+  'collaborator': function () {
+    return Meteor.users.findOne({_id: this.valueOf()});
   }
 });
 
@@ -92,7 +100,6 @@ Template.showProject.onCreated(function () {
   var self = this;
   self.autorun(function () {
     var controller = Router.current();
-    console.log(controller.params);
     self.subscribe('project', controller.params._id);
   });
 });
@@ -133,3 +140,23 @@ Template.editProject.onCreated(function () {
     self.subscribe('project', controller.params._id);
   });
 });
+
+/* Show all projects */
+
+Template.allProjects.helpers({
+  'projects': function () {
+    return Projects.find();
+  }
+});
+
+Template.allProjects.events({
+
+});
+
+Template.allProjects.onCreated(function () {
+  var self = this;
+  self.autorun(function () {
+    self.subscribe('allProjects');
+  });
+});
+
