@@ -49,7 +49,10 @@ Template.sendEmail.events({
 
     swal({ title: 'Are you sure?', text: 'Once confirmed, an email will be sent to the selected members!', type: 'warning', showCancelButton: true, confirmButtonColor: '#DD6B55', confirmButtonText: 'Yes, send it!', closeOnConfirm: false }, function () {
       Meteor.call('sendEmais', email, function (error, response) {
-        if (error) throw error;
+        if (error) {
+          swal('Oups!', 'Something went wront, ask the guy who is maintaining the site', 'error');
+          throw error;
+        }
         Router.go('emails');
         swal('Sent!', 'Your email has been sent!', 'success');
       });

@@ -22,7 +22,7 @@
     font-family: 'Lato', Helvetica, Verdana;
   }
 
-  .lead {
+  .eventdate {
     font-size: 9px;
   }
 
@@ -35,7 +35,7 @@
   }
 }
 
-.lead {
+.eventdate {
   color: #fff;
   font-size: 1.6em;
   font-weight: 50;
