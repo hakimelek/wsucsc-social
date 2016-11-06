@@ -1,5 +1,7 @@
 <template name="showProject">
-  {{>header}}
+  {{#if currentUser}}
+    {{>header}}
+  {{/if}}
 
   <div class="container">
     {{#with project}}
@@ -29,4 +31,3 @@
     {{/with}}
   </div>
 </template>
-

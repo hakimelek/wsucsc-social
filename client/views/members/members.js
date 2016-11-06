@@ -207,10 +207,19 @@ Template.addMember.onCreated(function () {
 
 AccountsTemplates.configure({
   texts: {
+    signUpLink_pre: 'Not a member yet?',
     title: {
       signUp: 'Become a member'
+    },
+    button: {
+      signUp: 'Enter our world!'
     }
   },
-
   showForgotPasswordLink: true,
+  showReCaptcha: true,
+  reCaptcha: {
+    siteKey: '6LeYOwsUAAAAAIQQupdcW7Q3yB15kzx6JlIbKYmp',
+    theme: 'light',
+    data_type: 'image'
+  }
 });

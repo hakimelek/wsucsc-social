@@ -19,5 +19,13 @@ projectsController = RouteController.extend({
 
   allProjects: function () {
     this.render('allProjects');
+  },
+
+  allProjectsFront: function () {
+    this.render('projectsFront');
+  },
+
+  showProjectFront: function () {
+    this.render('showProjectFront');
   }
 });

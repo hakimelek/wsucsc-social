@@ -25,6 +25,7 @@ body, html {
 #container {
     width: 1024px;
     margin: auto;
+    min-height: 400px;
 }
 
 #content {
@@ -139,11 +140,8 @@ a:hover {
 .menu {
   Background-color: #512F92;
   height: 50px;
-    margin-top: -50px;
+  margin-top: -50px;
 }
-
-
-
 
 .menu ul {
     margin-left: 120px;
@@ -152,15 +150,10 @@ a:hover {
     margin-bottom: 0;
 }
 
-
-
 .menu li {
-
     display: inline;
     list-style-type: none;
 }
-
-
 
 .menu a {
     text-decoration: none;

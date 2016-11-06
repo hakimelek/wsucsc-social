@@ -1,0 +1,30 @@
+<template name="projectBox">
+  <div class="col-md-3 projectbox">
+    {{#if currentUser}}
+      {{#linkTo route='project.show'}}
+        <h4>{{name}}</h4>
+      {{/linkTo}}
+    {{else}}
+      {{#linkTo route='project.show.front'}}
+        <h4>{{name}}</h4>
+      {{/linkTo}}
+    {{/if}}
+    {{#if isMe}}
+      {{#linkTo route='project.edit'}}
+        edit
+      {{/linkTo}}
+    {{/if}}
+    <p>{{description}}</p>
+    {{#if currentUser}}
+      {{#if joined}}
+        <button id="read-more" class="btn btn-default pull-right leaveProject">Joined <span class="badge">{{collaboratorsCount}}</span></button>
+      {{else}}
+        <button id="read-more" class="btn btn-default pull-right joinProject">Join <span class="badge">{{collaboratorsCount}}</span></button>
+      {{/if}}
+    {{else}}
+      {{#linkTo route='admin'}}
+        <button id="read-more" class="btn btn-default pull-right">Join <span class="badge">{{collaboratorsCount}}</span></button>
+      {{/linkTo}}
+    {{/if}}
+  </div>
+</template>

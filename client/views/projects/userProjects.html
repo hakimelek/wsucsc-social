@@ -17,22 +17,3 @@
     {{/if}}
   </div>
 </template>
-
-<template name="projectBox">
-  <div class="col-md-3 projectbox">
-    {{#linkTo route='project.show'}}
-      <h4>{{name}}</h4>
-    {{/linkTo}}
-    {{#if isMe}}
-      {{#linkTo route='project.edit'}}
-        edit
-      {{/linkTo}}
-    {{/if}}
-    <p>{{description}}</p>
-    {{#if joined}}
-      <button id="read-more" class="btn btn-default pull-right leaveProject">Joined <span class="badge">{{collaboratorsCount}}</span></button>
-    {{else}}
-      <button id="read-more" class="btn btn-default pull-right joinProject">Join <span class="badge">{{collaboratorsCount}}</span></button>
-    {{/if}}
-  </div>
-</template>

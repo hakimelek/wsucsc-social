@@ -14,3 +14,9 @@ Accounts.onCreateUser(function (options, user) {
 
   return user;
 });
+
+AccountsTemplates.configure({
+  reCaptcha: {
+    secretKey: '6LeYOwsUAAAAAPoCJz2QLbzCoHD-zs07yOB_Mo70'
+  }
+});

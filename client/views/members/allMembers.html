@@ -1,13 +1,17 @@
 <template name="members">
-  {{>header}}
+  {{#if currentUser}}
+    {{>header}}
+  {{/if}}
 
   <div class="container">
     <div class="page-header">
         <h1>
           Members
-          {{#linkTo route='member.add'}}
-            <a type="button" class="btn btn-success"> Invite a Member</a>
-          {{/linkTo}}
+          {{#if currentUser}}
+            {{#linkTo route='member.add'}}
+              <a type="button" class="btn btn-success"> Invite a Member</a>
+            {{/linkTo}}
+          {{/if}}
         </h1>
     </div>
 
@@ -55,21 +59,41 @@
                                           {{else}}
                                             <img class="img-rounded" src="http://bootdey.com/img/Content/user_1.jpg" alt="">
                                           {{/if}}
-                                          {{#linkTo route='member.show'}}
-                                            <a class="user-link">
-                                              {{#if status.online}}
-                                                <span class="glyphicon glyphicon-one-fine-dot green"></span>
-                                              {{/if}}
-                                              {{#if $and profile.firstName profile.lastName}}
-                                                {{profile.firstName}} {{profile.lastName}}
-                                              {{else}}
-                                                {{emails.[0].address}}
-                                                {{#linkTo route='member.edit'}}
-                                                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                {{/linkTo}}
-                                              {{/if}}
-                                            </a>
-                                          {{/linkTo}}
+                                          {{#if currentUser}}
+                                            {{#linkTo route='member.show'}}
+                                              <a class="user-link">
+                                                {{#if status.online}}
+                                                  <span class="glyphicon glyphicon-one-fine-dot green"></span>
+                                                {{/if}}
+                                                {{#if $and profile.firstName profile.lastName}}
+                                                  {{profile.firstName}} {{profile.lastName}}
+                                                {{else}}
+                                                  {{emails.[0].address}}
+                                                  {{#if currentUser}}
+                                                    {{#linkTo route='member.edit'}}
+                                                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                    {{/linkTo}}
+                                                  {{/if}}
+                                                {{/if}}
+                                              </a>
+                                            {{/linkTo}}
+                                          {{else}}
+                                              <a class="user-link">
+                                                {{#if status.online}}
+                                                  <span class="glyphicon glyphicon-one-fine-dot green"></span>
+                                                {{/if}}
+                                                {{#if $and profile.firstName profile.lastName}}
+                                                  {{profile.firstName}} {{profile.lastName}}
+                                                {{else}}
+                                                  {{emails.[0].address}}
+                                                  {{#if currentUser}}
+                                                    {{#linkTo route='member.edit'}}
+                                                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                    {{/linkTo}}
+                                                  {{/if}}
+                                                {{/if}}
+                                              </a>
+                                          {{/if}}
                                           {{#if isInRole 'admin, officer'}}
                                             {{#if role}}
                                               <span class="user-subhead">{{role}}</span>
@@ -89,15 +113,17 @@
                                       <td>
                                           <a href="#">{{emails.[0].address}}</a>
                                       </td>
-                                      <td style="width: 20%;">
-                                        {{#linkTo route='member.show'}}
-                                          <a class="table-link">
-                                              <span class="fa-stack">
-                                                  <i class="fa fa-square fa-stack-2x"></i>
-                                                  <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                              </span>
-                                          </a>
-                                        {{/linkTo}}
+                                      <td>
+                                        {{#if currentUser}}
+                                          {{#linkTo route='member.show'}}
+                                            <a class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                          {{/linkTo}}
+                                        {{/if}}
 
                                           {{#if isMeOrAdmin}}
                                             {{#linkTo route='member.edit'}}

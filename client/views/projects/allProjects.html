@@ -1,6 +1,7 @@
 <template name="allProjects">
-
-  {{>header}}
+  {{#if currentUser}}
+    {{>header}}
+  {{/if}}
 
   <div class="container">
     <div class="page-header">
@@ -11,5 +12,4 @@
       {{>projectBox}}
     {{/each}}
   </div>
-
 </template>

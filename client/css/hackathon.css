@@ -1,3 +1,11 @@
+.special_event {
+  background: #35005B !important;
+}
+
+.special_event:hover {
+  background: #ffffff !important;
+}
+
 .hackathon {
   background: url(../img/header-bg.jpg) no-repeat center center;
   width: 100%;

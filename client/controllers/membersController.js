@@ -9,6 +9,10 @@ membersController = RouteController.extend({
     this.render('members', { /* data: {} */});
   },
 
+  allMembersFront: function () {
+    this.render('membersFront', { /* data: {} */});
+  },
+
   showMember: function () {
     this.render('showMember', { /* data: {} */});
   },
@@ -20,6 +24,4 @@ membersController = RouteController.extend({
   editMember: function () {
     this.render('editMember', { /* data: {} */});
   }
-
-
 });
