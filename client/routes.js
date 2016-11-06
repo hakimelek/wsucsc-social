@@ -106,6 +106,8 @@ Router.route('/projects/:_id', {
 
 /** ******** ADMIN ROUTING ******* **/
 
+/** ** MEMBERS ** **/
+
 Router.route('admin/members', {
   name: 'members',
   controller: 'membersController',
@@ -134,6 +136,8 @@ Router.route('admin/members/:_id', {
   where: 'client'
 });
 
+/** ** EMAILS ** **/
+
 Router.route('admin/emails/send', {
   name: 'email.send',
   controller: 'emailsController',
@@ -154,6 +158,8 @@ Router.route('admin/emails/list', {
   action: 'getEmailList',
   where: 'client'
 });
+
+/** ** PROJECTS ** **/
 
 Router.route('admin/projects/', {
   name: 'projects',
@@ -180,5 +186,35 @@ Router.route('admin/projects/:_id/edit', {
   name: 'project.edit',
   controller: 'projectsController',
   action: 'editProject',
+  where: 'client'
+});
+
+/** ** MEETINGS ** **/
+
+Router.route('admin/meetings', {
+  name: 'meetings',
+  controller: 'meetingsController',
+  action: 'allMeetings',
+  where: 'client'
+});
+
+Router.route('admin/meetings/addmeeting', {
+  name: 'meeting.add',
+  controller: 'meetingsController',
+  action: 'addMeeting',
+  where: 'client'
+});
+
+Router.route('admin/meetings/:_id/editmeeting', {
+  name: 'meeting.edit',
+  controller: 'meetingsController',
+  action: 'editMeeting',
+  where: 'client'
+});
+
+Router.route('admin/meetings/:_id', {
+  name: 'meeting.show',
+  controller: 'meetingsController',
+  action: 'showMeeting',
   where: 'client'
 });
