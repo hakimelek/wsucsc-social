@@ -130,6 +130,18 @@ Template.editProject.events({
       Router.go('member.show', {_id: Meteor.userId()});
     });
     return false;
+  },
+
+  'click .editProject': function (event, template) {
+    event.preventDefault();
+    let controller = Router.current();
+    swal({ title: 'Are you sure?', text: 'You will not be able to recover this project!', type: 'warning', showCancelButton: true, confirmButtonColor: '#DD6B55', confirmButtonText: 'Yes, remove it!', closeOnConfirm: false }, function () {
+      Meteor.call('removeProject', controller.params._id, function (error, response) {
+        if (error) throw error;
+        Router.go('members');
+        swal('Remove!', 'The project has been removed.', 'success');
+      });
+    });
   }
 });
 
