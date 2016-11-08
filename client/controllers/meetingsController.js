@@ -16,8 +16,7 @@ meetingsController = RouteController.extend({
 
   addMeeting: function () {
     // this.render('addMeeting', { /* data: {} */});
-    this.render('notFound', { /* data: {} */});
-
+    this.render('createMeeting', { /* data: {} */});
   },
 
   editMeeting: function () {

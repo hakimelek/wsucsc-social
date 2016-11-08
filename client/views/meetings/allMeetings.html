@@ -4,14 +4,15 @@
   {{/if}}
 
   <div class="container">
-
     <div class="page-header">
       <h1>
         Meetings
         {{#if currentUser}}
-          {{#linkTo route='meeting.add'}}
-            <a type="button" class="btn btn-success"> Add a Meeting</a>
-          {{/linkTo}}
+          {{#if isInRole 'admin'}}
+            {{#linkTo route='meeting.add'}}
+              <a type="button" class="btn btn-success"> Add a Meeting</a>
+            {{/linkTo}}
+          {{/if}}
         {{/if}}
       </h1>
     </div>
@@ -27,20 +28,26 @@
               </tr>
           </thead>
           <tbody>
-            <tr>
-                <td>Meeting #1</td>
-                <td>2012/05/06</td>
-                <td><span class="label label-success">General</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Board Meeting #2</td>
-                <td>2011/12/01</td>
-                <td><span class="label label-warning">Board</span></td>
-            </tr>
+          {{#each meetings}}
+            {{>meeting}}
+          {{/each}}
           </tbody>
         </table>
       </div>
     </div>
   </div>
+</template>
+
+<template name="meeting">
+  <tr class="showMeeting">
+    <td>{{title}}</td>
+    <td>{{date}}</td>
+    <td>
+      {{#if $eq type 'board'}}
+        <span class="label label-warning">{{type}}</span>
+      {{else}}
+        <span class="label label-success">{{type}}</span>
+      {{/if}}
+    </td>
+  </tr>
 </template>

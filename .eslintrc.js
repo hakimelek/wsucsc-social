@@ -15,7 +15,8 @@ module.exports = {
                                                     "Messages",
                                                     "Roles",
                                                     "Projects",
-                                                    "Emails"]}]
+                                                    "Emails",
+                                                    "Meetings"]}]
   },
   "globals": {
     // Templates
@@ -35,6 +36,7 @@ module.exports = {
     "Emails": false,
     "Roles": false,
     "Projects": false,
+    "Meetings": false,
 
     // Controllers
 
@@ -42,6 +44,7 @@ module.exports = {
     "emailsController": false,
     "membersController": false,
     "projectsController": false,
+    "meetingsController": false,
 
     // Packages
 

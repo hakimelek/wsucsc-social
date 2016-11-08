@@ -1,0 +1,47 @@
+<template name="createMeeting">
+
+  {{>header}}
+
+  <div class="container">
+    <div class="page-header">
+        <h1>Create a new meeting</h1>
+    </div>
+
+    <div  class="row">
+     <form class="form-horizontal createMeeting">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" class="col-sm-2 control-label">Minutes</label>
+            <div class="col-sm-10 froalabox">
+              {{> froalaReactive getContext}}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="col-sm-2 control-label">Date</label>
+            <div class="col-sm-10">
+              <input type="text" name="date" class="datepicker form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">Type</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="type">
+                  <option class="general" value="general">General</option>
+                  <option class="board" value="board">Board</option>
+                </select>
+              </div>
+          </div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Create the Meeting</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</template>
