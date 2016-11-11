@@ -212,7 +212,7 @@ AccountsTemplates.configure({
       signUp: 'Become a member'
     },
     button: {
-      signUp: 'Enter our world!'
+      signUp: 'Signup!'
     }
   },
   showForgotPasswordLink: true,

@@ -2,6 +2,14 @@
   background: #35005B !important;
 }
 
+h2 .partner_name {
+  display: inline;
+}
+
+.partner {
+  margin-top: 15px;
+}
+
 .special_event:hover {
   background: #ffffff !important;
 }
