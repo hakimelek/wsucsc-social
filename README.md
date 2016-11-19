@@ -1,6 +1,5 @@
 ## Introduction
-[Winona State](http://winona.edu) has a cool [Computer Science Club](http://wsucs.club)
-. Meetings are every week. On one meeting members decided to get rid of Excel sheets, papers, third party apps and create their own platform. Here it is!
+[Winona State](http://winona.edu) has a cool [Computer Science Club](http://wsucs.club). Meetings are every week. In one meeting members decided to get rid of Excel sheets, papers, third party apps and create their own platform. Here it is!
 
 
 ![preview](https://wsucscmeteor.herokuapp.com/preview.gif)
